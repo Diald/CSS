@@ -1,0 +1,210 @@
+to change the opacity of a background color no need to do rgb(0,0,0,0.8) we can just say opacity:0.8;
+
+*{
+    background-image: url("img.jpg");
+    background-position: right top;
+    /* to check if a background should scroll or be fixed */
+    background-attachment: fixed;
+    /* or to make it scroll*/
+    background-attachment: scroll;
+    /*background shorthand properties is in the order*/
+    /* color - image - repeat - attachment - position */
+    background: #ffffff url("image1.jpg") no-repeat fixed right top;
+
+}
+.borders{
+    /*some border styles are as follows*/
+    border-style: dotted;
+    border-style: dashed;
+    border-style: solid;
+    border-style: double;
+    border-style: groove; /* 3d groove border*/
+    border-style: ridge;
+    /* to define the width of the border*/
+    border-width: 5px;
+    border-width: thick;
+    border-width: medium;
+    /* specific size width of the border*/
+    border-width: 20px 5px; /*20px on top and bottom and 5px on the sides*/
+    border-color: red;
+    border-color: blue;
+    /*specific side colors */
+    border-color: red green blue black;/*top right bottom left*/
+    /*border shorthand*/
+    border: 5px solid red;
+    /*border-width  border-style  border-width */
+    /*Rounded Borders*/
+    border-radius: 5px;
+}
+/*margins are used to create margins around the div or section element*/
+.margins{
+    margin-top: 8px;
+    margin-right: 10px;
+    margin-bottom:4px;
+    margin-left: 5px;
+    /*margin shorthand property */
+    /* top right bottom left*/
+    margin: 8px 10px 4px 5px;
+}
+/*padding is used to create space around element's content*/
+.padding{
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    /* padding shorthand */
+    /* top right bottom left*/
+    padding: 10px 10px 20px 20px;
+    /* top-bottom and right-left*/
+    padding: 25px 50px;
+}
+/*width is the area under the padding margins and borders and if more area of padding is summed up it creates a larger content area*/
+.width{
+    width: 300px;
+    padding: 25px;
+    /* actual width: 300px + 25px of left padding + 25px of right padding*/
+    /*width only increase left and right area */
+    /* to keep the width fixed no matter what the padding added is we used box-sizing: border-box;*/
+    width: 300px;
+    padding: 25px;
+    box-sizing: border-box;
+}
+/* box model of css*/
+/* first comes content , above content we have padding 
+above padding we have border
+above border we have margin
+so inside - width height 
+2nd - padding 
+3rd - border 
+4th - margin */
+/* CSS TEXTS */
+.text{
+    color: red;
+    background-color: blue;
+    /*text alignment*/
+    text-align: center;
+    text-align: right;
+    text-align: left;
+    text-align: justify;
+    /* how to use google fonts*/
+    <link rel="stylesheet" href="https://fonts.googlelapis.com>"> 
+    /*we have to use this link in html file before adding any text style name into it */
+    /* font shorthand property*/
+}
+/*one way to add icons in any inline HTML element is by library such as fontawesome 
+just say in html 
+<script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+
+/* another way is by using bootstrap icons 
+similarly we have to put a link in HTML file 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+*/
+
+
+/*LINKS*/
+a{
+    color:red;
+}
+a:link{
+    color:pink;
+}
+a:visited{
+    color:orange;
+}
+a:hover{
+    color:#ffffff;
+}
+/*selected link*/
+a:active{
+    color:blue;
+}
+/* a:hover must come after a:link and a:visited*/
+/* a:active must come after a:hover*/
+
+/* text decoration is used to remove underlines from link*/
+a:link{
+    text-decoration: none;
+}
+a:visited{
+    text-decoration: dotted;
+}
+/* link buttons */ 
+a:link, a:visited{
+    background-color: yellowgreen;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration:none;
+    display: inline-block;
+}
+/* text decoration */
+.text decoration{
+    text-decoration: overline;
+    text-decoration: line-through;/* cutting line theme*/
+    text-decoration: underline;
+    text-decoration: overline underline;
+}
+/* different types of cursors when you hover over something*/
+.cursors{
+    cursor: pointer;
+    cursor: auto;
+    cursor: crosshair;
+    cursor: e-resize;
+    cursor: help;
+    cursor: move;
+    cursor: progress;
+}
+
+/*lists in HTML and CSS*/
+/* we use <ul> for unordered lists 
+and <ol> for ordered lists 
+CSS Properties allows- 
+1. set different list item markers 
+2. set image as list item marker
+3. add background */
+ul.a{
+    list-style-type: circle;
+    list-style-type: square;
+    list-style-type: upper-roman;
+    /* for ordered list */
+    /* taking image as list item marker */
+    list-style-image: url('img1.gif');
+    /*position the list item markers */
+    list-style-position: outside;
+    list-style-position: inside;
+    /* to remove the markers/bullet points use list-style-type: none; */
+    list-style-type: none;
+    /* list shorthand property */ 
+    /* list-style-type  list-style-position  list-style-image */
+    list-style: square inside url("image1.png");
+}
+
+/*CSS TABLES */
+/* in HTML we used to use <table> </table> tage <tr> </tr> and <td> </td> tags */
+table,th, td{
+    border: 1px solid;
+    /* for full width table */
+}
+table{
+    width: 100%;
+}
+/* if you want the border only around the table and not the rows do thiz */
+table{
+    border: 1px solid;
+}
+/* to change the size of first row or heading row */
+th{
+    height: 70%;
+}
+/*table alignment to decide where the text will be */
+td{
+    text-align: center;
+}
+/* verticalalignment to take all text to bottom left */
+td{
+    height: 50px;
+    vertical-align: bottom;
+}
+div{
+    overflow-x: auto;
+}
