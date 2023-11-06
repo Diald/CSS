@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e5e5e5;
+        }
+        .chat-container {
+            display: flex;
+            flex-direction: column;
+            width: 500px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 0px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0);
+        }
+        .message-list {
+            display: flex;
+            flex-direction: column;
+            height: 400px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+        }
+        .message {
+            padding: 10px;
+            margin: 20px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            max-width: 70%;
+        }
+        .message:nth-child(odd) {
+            align-self: flex-start;
+            background-color: #e0e0e0;
+        }
+        .message:nth-child(even) {
+            align-self: flex-end;
+            background-color: #c5d9f1;
+        }
+        .message p {
+            margin: 0;
+        }
+        .message-input {
+            display: flex;
+            width: 100%;
+        }
+        .message-input input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+        }
+        .message-input button {
+            padding: 10px 20px;
+            border: none;
+            background-color:}
+    </style>
+</body>
+<div class="chat-container">
+  <div class="message-list"></div>
+  <div class="message-input">
+      <input type="text" id="userInput" placeholder="Type your message..." />
+      <button id="sendButton">Send</button>
+  </div>
+</div>
+<script>
+  $(document).ready(function() {
+    var userInput = $('#userInput');
+    var sendButton = $('#sendButton');
+    var messageList = $('.message-list');
+
+    // Simulate message history
+    messageList.append('<div class="message">Hello, I am a GPT-powered chatbot!</div>');
+
+    // Send message function
+    function sendMessage(text) {
+        messageList.append('<div class="message">' + text + '</div>');
+        messageList.scrollTop(messageList[0].scrollHeight);
+    }
+
+    // Handle user input
+    userInput.on('keypress', function(e) {
+        if (e.which === 13) { // Enter key
+            var text = userInput.val().trim();
+            if (text) {
+                sendMessage(text);
+                userInput.val('');
+            }
+        }
+    });
+
+    // Handle send button click
+    sendButton.on('click', function() {
+        var text = userInput.val().trim();
+        if (text) {
+            sendMessage(text);
+            userInput.val('');
+        }
+    });
+});
+</script>
+</html>
